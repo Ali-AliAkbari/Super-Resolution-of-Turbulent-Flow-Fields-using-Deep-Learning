@@ -1,3 +1,8 @@
+Based on your code, the paper, and your usage of both the model architecture diagram from the paper and `torchviz` for your own model visualization, here's a more **academic and polished** version of your `README.md` file:
+
+---
+
+```markdown
 # 🌀 Super-Resolution of Turbulent Flow Fields using Deep Learning
 
 This repository presents an implementation of a super-resolution neural network inspired by the methodology proposed in:
@@ -71,3 +76,81 @@ _Model architecture rendered with `torchviz`._
 optimizer = optim.Adam(model.parameters(), lr=1e-5)
 scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min')
 criterion = nn.MSELoss()
+```
+
+Training for 40 epochs (20+20) with gradient clipping and adaptive learning rate scheduling.
+
+---
+
+## 📊 Example Outputs
+
+Here is a comparison between:
+- **LR input** (coarse CFD result)
+- **SR output** (predicted high-resolution)
+- **Ground truth** (actual CFD result)
+
+<p align="center">
+  <img src="images/results_comparison.png" width="700"/>
+</p>
+
+The model successfully reconstructs fine-scale features missing from the low-resolution input.
+
+---
+
+## 📈 Loss Curve
+
+<p align="center">
+  <img src="images/loss_curve.png" width="500"/>
+</p>
+
+---
+
+## 🧾 Citation
+
+If you use this repository, please cite the original paper:
+
+```
+@article{hu2024superresolution,
+  title={Super-resolution-assisted rapid high-fidelity CFD modeling of data centers},
+  author={Hu, Beichao and Yin, Zeda and Hamrani, Abderrachid and Leon, Arturo and McDaniel, Dwayne},
+  journal={Building and Environment},
+  volume={247},
+  pages={111036},
+  year={2024},
+  publisher={Elsevier},
+  doi={10.1016/j.buildenv.2023.111036}
+}
+```
+
+---
+
+## ⚠️ Licensing
+
+The diagrams from the paper are used under **fair use** for educational and academic purposes. The main figure has been **recreated or included with proper citation**. Please do not reuse these figures commercially.
+
+---
+
+## 🧩 Future Work
+
+- Extend model to 3D turbulence fields.
+- Investigate the use of POD or spectral loss functions.
+- Compare performance with diffusion and transformer-based models.
+
+---
+
+## 📬 Contact
+
+For questions or collaborations, feel free to reach out.
+
+---
+
+## ✅ To Do
+
+- [x] Load and preprocess CFD data
+- [x] Implement residual U-Net
+- [x] Visualize model using `torchviz`
+- [x] Compare SR output with ground truth
+- [ ] Add SSIM/PSNR metrics
+- [ ] Experiment with GAN-based SR
+
+---
