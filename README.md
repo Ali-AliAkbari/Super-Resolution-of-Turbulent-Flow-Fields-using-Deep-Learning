@@ -30,7 +30,7 @@ We apply their idea of reconstructing high-resolution flow fields from low-resol
 The methodology is based on this figure from the original paper:
 
 <p align="center">
-  <img src="Images/model1.png" width="500"/>
+  <img src="Images/model 1.png" width="500"/>
 </p>
 
 Our network aims to perform a similar super-resolution task, adapted for 2D incompressible turbulence flows.
@@ -57,7 +57,7 @@ The network consists of:
 - Final output convolution
 
 <p align="center">
-  <img src="Images/model2.png" width="600"/>
+  <img src="Images/model 2.png" width="600"/>
 </p>
 
 _Model architecture rendered with `torchviz`._
@@ -99,7 +99,7 @@ The model successfully reconstructs fine-scale features missing from the low-res
 ## 📈 Loss Curve
 
 <p align="center">
-  <img src="Images/Loss" width="500"/>
+  <img src="Images/Loss.png" width="500"/>
 </p>
 
 ---
