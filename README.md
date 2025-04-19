@@ -57,7 +57,7 @@ The network consists of:
 - Final output convolution
 
 <p align="center">
-  <img src="Images/model 2.png" width="600"/>
+  <img src="Images/model 2.png" width="500" hight="600"/>
 </p>
 
 _Model architecture rendered with `torchviz`._
