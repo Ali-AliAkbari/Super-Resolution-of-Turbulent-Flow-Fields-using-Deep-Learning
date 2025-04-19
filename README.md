@@ -1,7 +1,3 @@
-Based on your code, the paper, and your usage of both the model architecture diagram from the paper and `torchviz` for your own model visualization, here's a more **academic and polished** version of your `README.md` file:
-
----
-
 ## 🧠 Introduction
 
 Recent advances in deep learning have enabled transformative approaches in computational fluid dynamics (CFD), particularly in accelerating simulations and improving resolution through data-driven surrogates. One such approach, known as **super-resolution**, has shown significant promise in reconstructing high-fidelity flow fields from coarse CFD data. Originally developed for image enhancement in computer vision, super-resolution techniques are now being applied to engineering domains where computational cost and spatial resolution are critical limitations.
