@@ -127,15 +127,7 @@ If you use this repository, please cite the original paper:
 
 The diagrams from the paper are used under **fair use** for educational and academic purposes. The main figure has been **recreated or included with proper citation**. Please do not reuse these figures commercially.
 
----
 
-## 🧩 Future Work
-
-- Extend model to 3D turbulence fields.
-- Investigate the use of POD or spectral loss functions.
-- Compare performance with diffusion and transformer-based models.
-
----
 
 ## 📬 Contact
 
