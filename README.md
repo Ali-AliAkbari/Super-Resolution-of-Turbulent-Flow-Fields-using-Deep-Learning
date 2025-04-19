@@ -2,17 +2,24 @@ Based on your code, the paper, and your usage of both the model architecture dia
 
 ---
 
-# 🌀 Super-Resolution of Turbulent Flow Fields using Deep Learning
+## 🧠 Introduction
 
-This repository presents an implementation of a super-resolution neural network inspired by the methodology proposed in:
+Recent advances in deep learning have enabled transformative approaches in computational fluid dynamics (CFD), particularly in accelerating simulations and improving resolution through data-driven surrogates. One such approach, known as **super-resolution**, has shown significant promise in reconstructing high-fidelity flow fields from coarse CFD data. Originally developed for image enhancement in computer vision, super-resolution techniques are now being applied to engineering domains where computational cost and spatial resolution are critical limitations.
 
-> **B. Hu et al.,**  
-> *Super-resolution-assisted rapid high-fidelity CFD modeling of data centers*,  
-> *Building and Environment*, Volume 247, 2024, 111036.  
-> [DOI: 10.1016/j.buildenv.2023.111036](https://doi.org/10.1016/j.buildenv.2023.111036)
+This repository implements a **deep convolutional neural network** based on the **U-Net architecture with residual blocks**, inspired by the methodology introduced in the paper:
 
-We apply their idea of reconstructing high-resolution flow fields from low-resolution CFD data to a **turbulent flow dataset**. The model learns to map coarse CFD data to finer-resolution outputs using a U-Net-like architecture enhanced with residual blocks.
+> Hu, B. et al., *Super-resolution-assisted rapid high-fidelity CFD modeling of data centers*, Building and Environment, 2024. [DOI: 10.1016/j.buildenv.2023.111036](https://doi.org/10.1016/j.buildenv.2023.111036)
 
+While the original work focused on thermal modeling of airflow in data centers, this project adapts the proposed framework to a different problem: the **super-resolution of 2D turbulent velocity fields**. The goal is to reconstruct high-resolution representations of turbulent flow from low-resolution inputs, thereby enabling faster simulations without compromising physical accuracy.
+
+We use publicly available datasets of 2D incompressible turbulent flow fields. The high-resolution data (`kf_2d_re1000_256_40seed.npy`) represent the ground truth, while the low-resolution data (`kmflow_sampled_data_irregnew.npz`) simulate coarse measurements or reduced CFD fidelity. A normalization pipeline ensures proper conditioning of the network inputs.
+
+The proposed model follows a typical encoder–decoder structure. The **encoder (downsampling)** path uses residual blocks and max pooling to extract multi-scale spatial features. The **decoder (upsampling)** path employs transposed convolutions and skip connections to reconstruct detailed high-resolution outputs. A residual bottleneck block is introduced at the center of the network to enhance representational capacity. The architecture is trained using Mean Squared Error (MSE) loss, with optional learning rate scheduling and gradient clipping for stability.
+
+This implementation not only tests the scalability of super-resolution techniques beyond their original domain but also demonstrates their utility in enhancing turbulence modeling, a longstanding challenge in fluid mechanics. By learning a mapping from low- to high-resolution representations, the model provides a promising alternative to expensive fine-grid CFD simulations, with potential implications for reduced-order modeling and real-time flow field prediction.
+<p align="center">
+  <img src="Images/Result 1.png" width="500"/>
+</p>
 ---
 
 ## 📌 Key Contributions
@@ -89,7 +96,7 @@ Here is a comparison between:
 - **Ground truth** (actual CFD result)
 
 <p align="center">
-  <img src="images/results_comparison.png" width="700"/>
+  <img src="Images/Result 2.png" width="500"/>
 </p>
 
 The model successfully reconstructs fine-scale features missing from the low-resolution input.
