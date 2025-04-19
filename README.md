@@ -75,7 +75,7 @@ _Model architecture rendered with `torchviz`._
 optimizer = optim.Adam(model.parameters(), lr=1e-5)
 scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min')
 criterion = nn.MSELoss()
-
+```
 
 Training for 40 epochs (20+20) with gradient clipping and adaptive learning rate scheduling.
 
