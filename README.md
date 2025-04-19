@@ -2,7 +2,6 @@ Based on your code, the paper, and your usage of both the model architecture dia
 
 ---
 
-```markdown
 # 🌀 Super-Resolution of Turbulent Flow Fields using Deep Learning
 
 This repository presents an implementation of a super-resolution neural network inspired by the methodology proposed in:
@@ -76,7 +75,7 @@ _Model architecture rendered with `torchviz`._
 optimizer = optim.Adam(model.parameters(), lr=1e-5)
 scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min')
 criterion = nn.MSELoss()
-```
+
 
 Training for 40 epochs (20+20) with gradient clipping and adaptive learning rate scheduling.
 
