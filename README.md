@@ -13,13 +13,13 @@ This repository implements a **deep convolutional neural network** based on the 
 While the original work focused on thermal modeling of airflow in data centers, this project adapts the proposed framework to a different problem: the **super-resolution of 2D turbulent velocity fields**. The goal is to reconstruct high-resolution representations of turbulent flow from low-resolution inputs, thereby enabling faster simulations without compromising physical accuracy.
 
 We use publicly available datasets of 2D incompressible turbulent flow fields. The high-resolution data (`kf_2d_re1000_256_40seed.npy`) represent the ground truth, while the low-resolution data (`kmflow_sampled_data_irregnew.npz`) simulate coarse measurements or reduced CFD fidelity. A normalization pipeline ensures proper conditioning of the network inputs.
-
-The proposed model follows a typical encoder–decoder structure. The **encoder (downsampling)** path uses residual blocks and max pooling to extract multi-scale spatial features. The **decoder (upsampling)** path employs transposed convolutions and skip connections to reconstruct detailed high-resolution outputs. A residual bottleneck block is introduced at the center of the network to enhance representational capacity. The architecture is trained using Mean Squared Error (MSE) loss, with optional learning rate scheduling and gradient clipping for stability.
-
-This implementation not only tests the scalability of super-resolution techniques beyond their original domain but also demonstrates their utility in enhancing turbulence modeling, a longstanding challenge in fluid mechanics. By learning a mapping from low- to high-resolution representations, the model provides a promising alternative to expensive fine-grid CFD simulations, with potential implications for reduced-order modeling and real-time flow field prediction.
 <p align="center">
   <img src="Images/Result 1.png" width="500"/>
 </p>
+The proposed model follows a typical encoder–decoder structure. The **encoder (downsampling)** path uses residual blocks and max pooling to extract multi-scale spatial features. The **decoder (upsampling)** path employs transposed convolutions and skip connections to reconstruct detailed high-resolution outputs. A residual bottleneck block is introduced at the center of the network to enhance representational capacity. The architecture is trained using Mean Squared Error (MSE) loss, with optional learning rate scheduling and gradient clipping for stability.
+
+This implementation not only tests the scalability of super-resolution techniques beyond their original domain but also demonstrates their utility in enhancing turbulence modeling, a longstanding challenge in fluid mechanics. By learning a mapping from low- to high-resolution representations, the model provides a promising alternative to expensive fine-grid CFD simulations, with potential implications for reduced-order modeling and real-time flow field prediction.
+
 ---
 
 ## 📌 Key Contributions
@@ -139,16 +139,5 @@ The diagrams from the paper are used under **fair use** for educational and acad
 ## 📬 Contact
 
 For questions or collaborations, feel free to reach out.
-
----
-
-## ✅ To Do
-
-- [x] Load and preprocess CFD data
-- [x] Implement residual U-Net
-- [x] Visualize model using `torchviz`
-- [x] Compare SR output with ground truth
-- [ ] Add SSIM/PSNR metrics
-- [ ] Experiment with GAN-based SR
-
+ali0aliakbari0@gmail.com
 ---
