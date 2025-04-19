@@ -96,7 +96,7 @@ Here is a comparison between:
 - **Ground truth** (actual CFD result)
 
 <p align="center">
-  <img src="Images/Result 2.png" width="500"/>
+  <img src="Images/Result 2.png" width="700"/>
 </p>
 
 The model successfully reconstructs fine-scale features missing from the low-resolution input.
