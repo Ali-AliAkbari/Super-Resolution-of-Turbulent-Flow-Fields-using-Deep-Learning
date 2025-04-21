@@ -45,7 +45,7 @@ Our network aims to perform a similar super-resolution task, adapted for 2D inco
 We used:
 - Low-resolution irregular CFD data: [`kmflow_sampled_data_irregnew.npz`](https://figshare.com/ndownloader/files/39214622)
 - High-resolution field data: [`kf_2d_re1000_256_40seed.npy`](https://figshare.com/ndownloader/files/39181919)
-- **Source repository**: [Link to dataset repository](https://github.com/Ali-AliAkbari/Diffusion-based-Fluid-Super-resolution)
+- **Source repository**: [Link to dataset repository](https://github.com/BaratiLab/Diffusion-based-Fluid-Super-resolution)
 
 These datasets contain velocity field slices of 2D turbulent flow simulations.
 
